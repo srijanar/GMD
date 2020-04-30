@@ -1,0 +1,18 @@
+.app-header{
+    background: #10719E;
+}
+
+:root {
+    --mdc-layout-grid-margin-desktop: 0px;
+    --mdc-layout-grid-gutter-desktop: 0px;
+}
+
+.app-sidebar{
+    height: 100%;
+    width: 20%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    border-right: 2px solid black;
+}
