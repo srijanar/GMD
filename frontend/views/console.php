@@ -1,3 +1,12 @@
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/gmd/src/Controller/AppData.php');
+$cameraList = getCameras();
+$cameraListArr = array();
+foreach ($cameraList as $key => $value) {
+    $cameraListArr[$value['id']] =$value;
+}
+
+?>
 <!DOCTYPE html>
 <head>
     <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
@@ -7,8 +16,10 @@
     <script type="application/javascript">
             function cameraClick(e){
                 dialog.open();
+                const cameraList = [<?php echo json_encode($cameraListArr) ?>];
+                document.getElementById("spanAppBarName").innerHTML = cameraList[0][e.id].name;
+                document.getElementById("modalCamera").src = "../../resources/images/"+ cameraList[0][e.id].path;
             }
-
     </script>
 </head>
 
@@ -26,81 +37,24 @@
 <section class="main-section">
     <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-2">
+            <?php
+            foreach ($cameraList as $key => $value){
+                echo '<div class="mdc-layout-grid__cell--span-2">
                 <header class="mdc-top-app-bar--fixed app-header">
                     <div class="mdc-top-app-bar__row" style="height: 40px">
                         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera1</span>
+                            <span class="mdc-top-app-bar__title">'.$value["name"].'</span>
                         </section>
                         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                         </section>
                     </div>
                 </header>
-                <div id="camera1" style="cursor: pointer" onclick="cameraClick(this)">
-                <img class="mdc-image-list__image" src="../../resources/images/sample1.jpeg" style="height:200px">
+                <div id="'.$value["id"].'" style="cursor: pointer" onclick="cameraClick(this)">
+                <img class="mdc-image-list__image" src="../../resources/images/'.$value["path"].'" style="height:200px">
                 </div>
-            </div>
-            <div class="mdc-layout-grid__cell--span-2">
-                <header class="mdc-top-app-bar--fixed app-header">
-                    <div class="mdc-top-app-bar__row" style="height: 40px">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera2</span>
-                        </section>
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                        </section>
-                    </div>
-                </header>
-                <img class="mdc-image-list__image" src="../../resources/images/sample2.jpeg" style="height:200px">
-            </div>
-            <div class="mdc-layout-grid__cell--span-2">
-                <header class="mdc-top-app-bar--fixed app-header">
-                    <div class="mdc-top-app-bar__row" style="height: 40px">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera3</span>
-                        </section>
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                        </section>
-                    </div>
-                </header>
-                <img class="mdc-image-list__image" src="../../resources/images/sample1.jpeg" style="height:200px">
-            </div>
-            <div class="mdc-layout-grid__cell--span-2">
-                <header class="mdc-top-app-bar--fixed app-header">
-                    <div class="mdc-top-app-bar__row" style="height: 40px">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera4</span>
-                        </section>
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                        </section>
-                    </div>
-                </header>
-                <img class="mdc-image-list__image" src="../../resources/images/sample2.jpeg" style="height:200px">
-            </div>
-            <div class="mdc-layout-grid__cell--span-2">
-                <header class="mdc-top-app-bar--fixed app-header">
-                    <div class="mdc-top-app-bar__row" style="height: 40px">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera5</span>
-                        </section>
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                        </section>
-                    </div>
-                </header>
-                <img class="mdc-image-list__image" src="../../resources/images/sample1.jpeg" style="height:200px">
-            </div>
-            <div class="mdc-layout-grid__cell--span-2">
-                <header class="mdc-top-app-bar--fixed app-header">
-                    <div class="mdc-top-app-bar__row" style="height: 40px">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera6</span>
-                        </section>
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                        </section>
-                    </div>
-                </header>
-                <img class="mdc-image-list__image" src="../../resources/images/sample2.jpeg" style="height:200px">
-            </div>
-        </div>
+            </div>';
+            }
+            ?>
     </div>
 </section>
 <div class="mdc-dialog">
@@ -115,14 +69,14 @@
                 <header class="mdc-top-app-bar--fixed app-header">
                     <div class="mdc-top-app-bar__row" style="height: 40px">
                         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                            <span class="mdc-top-app-bar__title">Camera1</span>
+                            <span id="spanAppBarName" class="mdc-top-app-bar__title"></span>
                         </section>
                         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                         </section>
                     </div>
                 </header>
-                <div id="camera1" style="cursor: pointer" onclick="cameraClick(this)">
-                    <img class="mdc-image-list__image" src="../../resources/images/sample1.jpeg" style="height:400px">
+                <div>
+                    <img id="modalCamera" class="mdc-image-list__image" style="height:400px">
                 </div>
             </div>
         </div>
