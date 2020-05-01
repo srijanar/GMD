@@ -3,8 +3,8 @@
 }
 
 :root {
-    --mdc-layout-grid-margin-desktop: 0px;
-    --mdc-layout-grid-gutter-desktop: 0px;
+    --mdc-layout-grid-margin-desktop: 8px;
+    --mdc-layout-grid-gutter-desktop: 8px;
 }
 
 .app-sidebar{
@@ -15,4 +15,8 @@
     flex-direction: column;
     position: fixed;
     border-right: 2px solid black;
+}
+
+.main-section{
+    margin: 64px auto;
 }
