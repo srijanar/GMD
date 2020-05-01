@@ -1,24 +1,18 @@
 <?php
-
-//connect database and return the status
-function getDatabaseStatus(){
-    $host = "localhost";
-    $userName = "Enter mysql username here";
-    $password = "Enter mysql password here";
-    $dbName = "Enter database name here";
-
-    $connection = mysqli_connect($host, $userName, $password, $dbName);
-    if(!$connection){
+function getDatabaseConnection(){
+    $host = "Hostname here";
+    $userName = "MYSQL Username here";
+    $password = "MYSQL Password here";
+    $dbName = "Database name here";
+    $mysqli = new mysqli($host, $userName, $password, $dbName);
+    if(!$mysqli){
         return mysqli_connect_error();
-        //die("Connection Failed!".mysqli_connect_error());
     }
     else{
-        return "success";
+        return $mysqli;
     }
 }
 
-//close the database connection
 function closeDatabaseConnection($connection){
     $connection->close();
 }
-
