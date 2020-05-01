@@ -23,9 +23,8 @@ $userList = getUsers();
     </div>
 </header>
 <section style="margin: 64px auto;">
-    <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-3 app-sidebar">
+
+            <div class="app-sidebar">
                 <div>
                     <div class="mdc-select">
                         <div class="mdc-select__anchor demo-width-class">
@@ -58,10 +57,18 @@ $userList = getUsers();
                     console.log(select);
                 </script>
             </div>
-            <div class="mdc-layout-grid__cell--span-9" style="overflow-y: auto ">
+            <div style="overflow-y: auto; width: 80%; float: right">
+                <button class="mdc-button mdc-button--raised" onclick="buttonClick()">
+                    <span class="mdc-button__ripple"></span>
+                        Console
+                </button>
             </div>
-        </div>
-    </div>
+            <script>
+                function buttonClick() {
+                   location.href='../frontend/views/console.php';
+                }
+            </script>
+
 </section>
 </body>
 </html>
