@@ -22,7 +22,7 @@ $userList = getUsers();
         </section>
     </div>
 </header>
-<section style="margin: 64px auto;">
+<section class="main-section">
 
             <div class="app-sidebar">
                 <div>
