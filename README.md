@@ -1,7 +1,7 @@
 How to use:
-git clone https://github.com/srijanar/GMD.git
-Pulll development branch
-Configure database:
+#git clone https://github.com/srijanar/GMD.git
+#Pull development branch
+#Configure database:
 Config/db_connection.php.txt
 Remove .txt extension from above file
 Configure localhost,username, password, database
