@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/gmd/src/Controller/AppData.php');
+include ('../../config.php');
+require_once(ROOT_DIR.'/src/Controller/AppData.php');
 $cameraList = getCameras();
 $cameraListArr = array();
 foreach ($cameraList as $key => $value) {

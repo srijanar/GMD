@@ -1,3 +1,6 @@
+<?php
+include ('../config.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +9,7 @@
     </head>
     <body>
         <?php
-            include('../frontend/views/dashboard.php');
+            include(ROOT_DIR.'/frontend/views/dashboard.php');
             ?>
     </body>
 </html>

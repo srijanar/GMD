@@ -1,5 +1,5 @@
 <?php
-require_once('../src/Controller/AppData.php');
+require_once(ROOT_DIR.'/src/Controller/AppData.php');
 $userList = getUsers();
 ?>
 <!DOCTYPE html>

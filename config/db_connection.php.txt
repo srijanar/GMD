@@ -1,9 +1,9 @@
 <?php
 function getDatabaseConnection(){
-    $host = "Hostname here";
-    $userName = "MYSQL Username here";
-    $password = "MYSQL Password here";
-    $dbName = "Database name here";
+    $host = "localhost";
+    $userName = "root";
+    $password = "root";
+    $dbName = "gmd";
     $mysqli = new mysqli($host, $userName, $password, $dbName);
     if(!$mysqli){
         return mysqli_connect_error();
