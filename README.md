@@ -21,8 +21,8 @@ Create table camera with attributes id, name , path and createdAt;
 ### create table camera (id int(6) primary key,name varchar(30), path varchar(100), createdAt datetime  DEFAULT CURRENT_TIMESTAMP);
 ```
 ## Insert test data:
-insert into user(1, 'Harry', 'Porter');
-insert into user(1, 'James', 'Bond');
+insert into user(id, firstname, lastname) values (1, 'Harry', 'Porter');
+insert into user(id, firstname, lastname) values (2, 'James', 'Bond');
 
 # There is already two sample images inside resources/images;
 insert into camera (id, name, path) values (1,'camera1', 'Sample1.jpeg');
