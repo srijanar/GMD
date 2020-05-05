@@ -1,4 +1,5 @@
 # How to access application:
+Goto /var/www/html
 git clone https://github.com/srijanar/GMD.git
 ```
 Pull development branch
