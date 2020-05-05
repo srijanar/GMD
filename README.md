@@ -11,12 +11,18 @@ Configure localhost,username, password, database
 ```
 #Database
 Create table user with attributes id, firstname, lastname;
-###  create table user (id int(6), firstname varchar(30), lastname varchar(30));
+###  create table user (id int(6) primary key, firstname varchar(30), lastname varchar(30));
 Create table camera with attributes id, name , path and createdAt;
-### create table camera(id int(6), name varchar(30), path varchar(30), createdAt DATETIME DEFAULT CURRENT_TIMESTAMP);
+### create table camera (id int(6) primary key,name varchar(30), path varchar(100), createdAt datetime  DEFAULT CURRENT_TIMESTAMP);
+
+```
+##Insert test data:
+insert into user(1, 'Harry', 'Porter');
+insert into user(1, 'James', 'Bond');
 
 #There is already two sample images inside resources/images;
-#To access these images, insert sample data in table where path is just a image name;
+insert into camera (id, name, path) values (1,'camera1', 'Sample1.jpeg');
+insert into camera (id, name, path) values (1,'camera2', 'Sample2.jpeg');
 
 To access the web application:
 localhost/GMD/public
