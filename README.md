@@ -10,8 +10,8 @@ Configure localhost,username, password, database
 
 # Database
 Connect to MYSQL:
-mysql -u "username" -p
-> "password";
+mysql -u <mysql user name> -p
+> <mysql password>;
 create database <database name>;
 use <database name>;
 
