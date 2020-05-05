@@ -9,6 +9,12 @@ Remove .txt extension from above file
 Configure localhost,username, password, database
 
 # Database
+Connect to MYSQL:
+mysql -u "username" -p
+> "password";
+create database <database name>;
+use <database name>;
+
 Create table user with attributes id, firstname, lastname;
 ###  create table user (id int(6) primary key, firstname varchar(30), lastname varchar(30));
 Create table camera with attributes id, name , path and createdAt;
