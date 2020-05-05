@@ -9,18 +9,17 @@ Remove .txt extension from above file
 Configure localhost,username, password, database
 ```
 ```
-#Database
+# Database
 Create table user with attributes id, firstname, lastname;
 ###  create table user (id int(6) primary key, firstname varchar(30), lastname varchar(30));
 Create table camera with attributes id, name , path and createdAt;
 ### create table camera (id int(6) primary key,name varchar(30), path varchar(100), createdAt datetime  DEFAULT CURRENT_TIMESTAMP);
-
 ```
-##Insert test data:
+## Insert test data:
 insert into user(1, 'Harry', 'Porter');
 insert into user(1, 'James', 'Bond');
 
-#There is already two sample images inside resources/images;
+# There is already two sample images inside resources/images;
 insert into camera (id, name, path) values (1,'camera1', 'Sample1.jpeg');
 insert into camera (id, name, path) values (1,'camera2', 'Sample2.jpeg');
 
