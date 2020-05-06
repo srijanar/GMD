@@ -43,9 +43,9 @@ foreach ($cameraList as $key => $value) {
                 echo '<div class="mdc-layout-grid__cell--span-2">
                 <header class="mdc-top-app-bar--fixed app-header">
                     <div class="mdc-top-app-bar__row" style="height: 40px">
-                        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                       <!-- <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                             <span class="mdc-top-app-bar__title">'.$value["name"].'</span>
-                        </section>
+                        </section> -->
                         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
                         </section>
                     </div>
